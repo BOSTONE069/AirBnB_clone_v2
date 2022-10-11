@@ -57,11 +57,15 @@ class FileStorage:
             pass
 
     def delete(self, obj=None):
-        '''deletes the obj from the attribute 
+        """deletes the obj from the attribute
         __object if it in the list of
-        '''
+        """
         if obj is None:
             return
         obj_key = obj.to_dict()['__class__'] + '.' + obj.id
         if obj_key in self.__objects.keys():
             del self.__objects[obj_key]
+
+    def close(self):
+        """Calls the reload method"""
+        self.reload()
