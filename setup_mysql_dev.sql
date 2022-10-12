@@ -1,6 +1,7 @@
 -- Create database and user, grant user permissions without failing if either exists 
-CREATE IF NOT EXISTS DATABASE hbnb_dev_db;
-CREATE IF NOT EXISTS USER 'hbnb_dev'@'localhost' IDENTIFIED 
+CREATE DATABASE IF NOT EXISTS hbnb_dev_db;
+USE hbnb_dev_db;
+CREATE USER IF NOT EXISTS 'hbnb_dev'@'localhost' IDENTIFIED 
 WITH authentication_plugin 
 BY 'hbnb_dev_pwd';
 
