@@ -32,6 +32,7 @@ def do_deploy(archive_path):
         run('sudo rm -rf {}web_static'.format(new_folder))
         run('sudo rm -rf /data/web_static/current')
         run('sudo ln -s {} /data/web_static/current'.format(new_folder))
+        print("New version deployed!")
         return True
     except:
         return False
