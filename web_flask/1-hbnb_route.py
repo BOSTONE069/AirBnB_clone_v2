@@ -16,7 +16,7 @@ def hello_hbnb():
 
 
 @app.route('/', strict_slashes=False)
-def hbnb():
+def hbnb_school():
     """
     Function that returns on url /hbnb
     """
