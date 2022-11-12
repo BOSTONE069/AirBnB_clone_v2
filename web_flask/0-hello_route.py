@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""
-Start the flask web framework
+""" Start the flask web framework
 The application listens on 0.0.0.0, port 5000
 Routes:
     /:Display 'Hello HBNB'
