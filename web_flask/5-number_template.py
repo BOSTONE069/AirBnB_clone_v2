@@ -51,7 +51,7 @@ def number(n):
     return "{} is a number".format(n)
 
 @app.route("/number_template/<int:n>", strict_slaches=False)
-def number_template():
+def number_template(n):
     """Displays html page if n is an integer"""
     return render_template("5-number.html", n=n)
 
