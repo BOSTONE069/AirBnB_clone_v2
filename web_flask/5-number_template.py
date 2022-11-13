@@ -7,6 +7,7 @@ Routes:
     /c/<text>: Displays 'C' followed by the value of <text>.
     /python/(<text>): Displays 'Python' followed by the value of <text>.
     /number/<n>: Displays 'n is a number' only if <n> is an integer.
+    /number_template/<n>: Displays an HTML page only if <n> is an integer.
 """
 from flask import Flask
 from flask import render_template
@@ -16,19 +17,19 @@ app = Flask(__name__)
 
 @app.route("/", strict_slashes=False)
 def hello_hbnb():
-    """Displays 'Hello HBNB!'."""
+    """Displays 'Hello HBNB!'"""
     return "Hello HBNB!"
 
 
 @app.route("/hbnb", strict_slashes=False)
 def hbnb():
-    """Displays 'HBNB'."""
+    """Displays 'HBNB'"""
     return "HBNB"
 
 
 @app.route("/c/<text>", strict_slashes=False)
 def c(text):
-    """Displays 'C' followed by the value of <text>.
+    """Displays 'C' followed by the value of <text>
     Replaces any underscores in <text> with slashes.
     """
     text = text.replace("_", " ")
@@ -38,7 +39,7 @@ def c(text):
 @app.route("/python", strict_slashes=False)
 @app.route("/python/<text>", strict_slashes=False)
 def python(text="is cool"):
-    """Displays 'Python' followed by the value of <text>.
+    """Displays 'Python' followed by the value of <text>
     Replaces any underscores in <text> with slashes.
     """
     text = text.replace("_", " ")
@@ -47,12 +48,13 @@ def python(text="is cool"):
 
 @app.route("/number/<int:n>", strict_slashes=False)
 def number(n):
-    """Displays 'n is a number' only if n is an integer."""
+    """Displays 'n is a number' only if <n> is an integer."""
     return "{} is a number".format(n)
 
-@app.route("/number_template/<int:n>", strict_slaches=False)
+
+@app.route("/number_template/<int:n>", strict_slashes=False)
 def number_template(n):
-    """Displays html page if n is an integer"""
+    """Displays an HTML page only if <n> is an integer."""
     return render_template("5-number.html", n=n)
 
 
